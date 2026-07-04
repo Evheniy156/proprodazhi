@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Глубокий аудит продаж — найдём, где утекают деньги | Лидия Попова</title>
+<meta name="description" content="Глубокий аудит ваших продаж как полное обследование у врача: точный диагноз, CJM-карта пути клиента с точками слива, список быстрых побед и план лечения. Лидия Попова, центр ПРОпродажи." />
+<style>
+:root{
+  --ink:#101722; --muted:#667085;
+  --paper:#fbf5ec; --paper2:#fffaf2; --white:#ffffff;
+  --navy:#071422; --navy2:#0e2438; --blue:#255e84; --sky:#bfe7ef;
+  --orange:#f46f2c; --gold:#d8a34d; --green:#1f9d6a;
+  --line:rgba(16,23,34,.12);
+  --shadow:0 28px 80px rgba(7,20,34,.18);
+  --radius:28px; --radius2:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+.header{position:sticky;top:0;z-index:50;background:rgba(251,245,236,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(16,23,34,.08)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.02em}
+.mark{width:42px;height:42px;border-radius:16px;background:linear-gradient(135deg,var(--orange),#ffb36b);display:grid;place-items:center;color:#fff;font-weight:1000;box-shadow:0 12px 34px rgba(244,111,44,.35)}
+.brand span small{display:block;font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-top:-3px}
+.menu{display:flex;align-items:center;gap:22px;color:#344054;font-size:14px;font-weight:750}
+.menu a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 24px;font-weight:850;letter-spacing:-.01em;cursor:pointer;transition:.2s transform ease,.2s box-shadow ease,.2s background ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 18px 36px rgba(244,111,44,.32)}
+.btn-dark{background:var(--navy);color:#fff;box-shadow:0 18px 36px rgba(7,20,34,.24)}
+.btn-ghost{background:rgba(255,255,255,.7);border:1px solid rgba(16,23,34,.12);color:var(--ink)}
+.btn-light{background:#fff;color:var(--navy);box-shadow:0 18px 36px rgba(0,0,0,.22)}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 14% 6%,rgba(244,111,44,.4),transparent 30%),radial-gradient(circle at 86% 18%,rgba(191,231,239,.26),transparent 32%),linear-gradient(135deg,#071422 0%,#0d1e31 46%,#173a51 100%)}
+.hero::after{content:"";position:absolute;inset:auto -12% -28% -12%;height:440px;background:radial-gradient(ellipse,rgba(255,255,255,.12),transparent 68%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;padding:80px 0 76px;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:999px;color:#dff8ff;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:block;box-shadow:0 0 0 6px rgba(244,111,44,.18)}
+h1{font-size:clamp(40px,5.6vw,72px);line-height:.98;margin:26px 0 24px;letter-spacing:-.045em;max-width:760px}
+h1 .accent{color:var(--orange)}
+.lead{font-size:clamp(18px,2vw,22px);line-height:1.42;color:#e7f2f4;max-width:620px;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 0}
+.hero-note{margin-top:18px;color:#a9c2cc;font-size:14px}
+.hero-art{position:relative;min-height:560px}
+.hero-card{position:absolute;right:2%;top:0;width:84%;border-radius:40px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.18);transform:rotate(1.5deg);background:#111}
+.hero-card img{height:520px;width:100%;object-fit:cover;object-position:center 25%}
+.diag-card{position:absolute;left:-2%;bottom:24px;width:300px;background:rgba(255,255,255,.95);color:var(--ink);border-radius:26px;padding:22px 24px;box-shadow:0 24px 70px rgba(0,0,0,.3)}
+.diag-card b{display:block;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--orange);font-weight:950;margin-bottom:8px}
+.diag-card p{margin:0;font-weight:700;color:#344054;font-size:15px;line-height:1.35}
+.section{padding:88px 0}
+.section.compact{padding:56px 0}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.18em;font-weight:950;color:var(--orange);margin-bottom:14px}
+.section-title{font-size:clamp(31px,4.3vw,54px);line-height:1.02;letter-spacing:-.04em;margin:0 0 22px;max-width:860px}
+.section-lead{font-size:19px;color:#475467;max-width:760px;margin:0 0 30px}
+/* problem agitation */
+.agitate{background:linear-gradient(180deg,#fff8ef,#fbf5ec)}
+.agitate-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.agitate p.big{font-size:22px;line-height:1.5;color:#2b3542;margin:0 0 18px;font-weight:600}
+.agitate p.big b{color:var(--orange)}
+.symptom{display:grid;gap:12px}
+.symptom div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px;display:flex;gap:12px;color:#475467;box-shadow:0 10px 30px rgba(16,23,34,.05)}
+.symptom div i{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#fff0e8;color:var(--orange);font-style:normal;font-weight:1000}
+/* approach / doctor metaphor */
+.approach{background:var(--navy);color:#fff;border-radius:54px;padding:54px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.approach::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:rgba(244,111,44,.2);right:-170px;top:-180px;filter:blur(8px)}
+.approach-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.approach h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.04em;line-height:1.04;margin:0 0 18px}
+.approach p{color:#cfe0e6;font-size:19px;margin:0 0 14px}
+.vs{display:grid;gap:14px}
+.vs div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:20px 22px}
+.vs div span{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;margin-bottom:6px}
+.vs .cross span{color:#ff9a7a}
+.vs .check span{color:#7ee0b4}
+.vs div p{margin:0;color:#e7f2f4;font-size:16px;font-weight:600}
+/* five questions */
+.qgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px;counter-reset:q}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 14px 46px rgba(16,23,34,.07);position:relative}
+.qcard::before{counter-increment:q;content:counter(q);position:absolute;top:26px;right:30px;font-size:54px;font-weight:1000;line-height:1;color:rgba(244,111,44,.16);letter-spacing:-.06em}
+.qcard h3{margin:0 0 12px;font-size:23px;letter-spacing:-.03em;max-width:80%}
+.qcard p{margin:0;color:#5a6678}
+.qcard.full{grid-column:1 / -1;background:linear-gradient(135deg,#fff,#fff5e8);border-color:rgba(244,111,44,.2)}
+/* CJM journey */
+.cjm{background:linear-gradient(180deg,#0c1c2c,#10293c);color:#fff}
+.cjm .eyebrow{color:#ffd7bd}
+.cjm .section-lead{color:#c4d6dd}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.stage{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px 20px;position:relative}
+.stage b{display:block;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;font-weight:1000;display:grid;place-items:center;margin-bottom:16px;box-shadow:0 8px 22px rgba(244,111,44,.4)}
+.stage h3{font-size:18px;margin:0 0 8px;letter-spacing:-.02em}
+.stage p{font-size:14px;color:#bcd0d8;margin:0}
+.cjm-note{margin-top:34px;background:rgba(244,111,44,.12);border:1px solid rgba(244,111,44,.28);border-radius:24px;padding:24px 28px;font-size:18px;color:#ffe7d8;font-weight:600}
+.cjm-note b{color:#fff}
+/* deliverables */
+.deliver{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:0 14px 46px rgba(16,23,34,.07);display:flex;gap:18px;align-items:flex-start}
+.dcard .ic{flex:0 0 52px;height:52px;border-radius:16px;background:#fff0e8;color:var(--orange);display:grid;place-items:center;font-size:24px;font-weight:1000}
+.dcard h3{margin:0 0 8px;font-size:21px;letter-spacing:-.03em}
+.dcard p{margin:0;color:#5a6678;font-size:15px}
+.dcard.win{background:linear-gradient(135deg,#0d2335,#16415a);color:#fff;border:0}
+.dcard.win .ic{background:rgba(255,255,255,.14);color:#ffd7bd}
+.dcard.win p{color:rgba(255,255,255,.84)}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px;counter-reset:p}
+.pstep{background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 12px 40px rgba(16,23,34,.06);position:relative}
+.pstep::before{counter-increment:p;content:"0" counter(p);display:block;color:rgba(244,111,44,.26);font-size:40px;font-weight:1000;line-height:1;margin-bottom:14px;letter-spacing:-.06em}
+.pstep h3{font-size:19px;margin:0 0 10px;letter-spacing:-.03em}
+.pstep p{font-size:14.5px;color:#667085;margin:0}
+.pstep .when{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:900;color:var(--orange);background:#fff0e8;border-radius:999px;padding:5px 11px}
+/* expert */
+.expert{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.expert::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(244,111,44,.16);left:-190px;bottom:-190px;filter:blur(10px)}
+.expert-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:stretch;position:relative;z-index:1}
+.expert-photo{border-radius:40px;overflow:hidden;min-height:540px;box-shadow:0 30px 90px rgba(0,0,0,.34)}
+.expert-photo img{height:100%;width:100%;object-fit:cover;object-position:center 18%}
+.expert .eyebrow{color:#ffd7bd}
+.expert .section-lead{color:#c9d7dd}
+.regalia{display:grid;gap:12px;margin-top:8px}
+.regalia div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:15px 18px;color:#e7f2f4;display:flex;gap:12px;font-weight:600;font-size:16px}
+.regalia div::before{content:"✓";color:#7ee0b4;font-weight:1000}
+/* investment */
+.invest-card{background:linear-gradient(135deg,#fff,#fff5e8);border:1px solid rgba(244,111,44,.2);border-radius:46px;padding:48px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.invest-card .invest-head{font-size:clamp(25px,3vw,36px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--navy);margin:8px 0 12px}
+.invest-card .sub{color:#667085;font-weight:700;margin:0 0 22px}
+.incl{display:grid;gap:10px;margin:0 0 24px;padding:0;list-style:none}
+.incl li{display:flex;gap:10px;color:#3a4654;font-size:16px}
+.incl li::before{content:"✓";color:var(--green);font-weight:1000}
+.phase2{background:var(--navy);color:#fff;border-radius:34px;padding:34px}
+.phase2 .tag{display:inline-block;font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.12);color:#ffd7bd;border-radius:999px;padding:7px 12px;margin-bottom:16px}
+.phase2 h3{margin:0 0 12px;font-size:25px;letter-spacing:-.03em}
+.phase2 p{margin:0;color:#cfe0e6;font-size:16px}
+/* faq */
+.faq{display:grid;gap:14px;margin-top:34px;max-width:880px}
+details{background:#fff;border:1px solid var(--line);border-radius:22px;padding:6px 26px;box-shadow:0 10px 30px rgba(16,23,34,.05)}
+details summary{cursor:pointer;list-style:none;padding:22px 0;font-weight:850;font-size:19px;letter-spacing:-.02em;display:flex;justify-content:space-between;align-items:center;gap:16px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:28px;color:var(--orange);font-weight:700;line-height:1;transition:.2s transform}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;color:#5a6678;font-size:16px;max-width:740px}
+/* final cta */
+.cta{background:var(--navy);color:#fff;padding:84px 0;border-radius:58px 58px 0 0;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(244,111,44,.28),transparent 32%),radial-gradient(circle at 82% 16%,rgba(191,231,239,.16),transparent 34%)}
+.cta-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:36px;padding:30px}
+.contact-card a{display:flex;justify-content:space-between;align-items:center;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:18px 20px;margin-top:12px;font-weight:900}
+.contact-card a:hover{background:rgba(255,255,255,.14)}
+.footer{background:var(--navy);color:#9fb2bd;border-top:1px solid rgba(255,255,255,.08);padding:28px 0;font-size:13px}
+.footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:1040px){
+ .menu{display:none}.hero-grid,.agitate-grid,.approach-grid,.expert-grid,.invest-card,.cta-grid{grid-template-columns:1fr}.qgrid,.deliver{grid-template-columns:1fr 1fr}.journey{grid-template-columns:repeat(2,1fr)}.proc{grid-template-columns:repeat(2,1fr)}.hero-art{min-height:520px}
+}
+@media (max-width:680px){
+ .container{width:min(100% - 24px,1120px)}.nav{height:64px}.btn{padding:13px 18px;font-size:14px}.brand span{font-size:15px}.brand span small{font-size:9px}
+ .hero-grid{padding:40px 0 44px;gap:24px}h1{font-size:36px;letter-spacing:-.035em}.lead{font-size:17px}.hero-actions .btn{width:100%}
+ .hero-art{min-height:480px}.hero-card{right:0;width:92%;border-radius:30px}.hero-card img{height:380px}.diag-card{left:0;width:230px;padding:18px;bottom:12px}
+ .section{padding:58px 0}.section.compact{padding:40px 0}.section-title{font-size:30px}.section-lead{font-size:17px}
+ .qgrid,.deliver,.journey,.proc{grid-template-columns:1fr}.approach,.invest-card{border-radius:30px;padding:28px}.qcard.full{grid-column:auto}.agitate p.big{font-size:19px}
+ .cjm-note{font-size:16px;padding:20px}.phase2{padding:24px}.cta{border-radius:34px 34px 0 0;padding:56px 0}.contact-card{padding:22px}.footer .container{display:block}.qcard h3{max-width:100%}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="ПРОпродажи">
+      <div class="mark">П</div>
+      <span>ПРОпродажи<small>аудит продаж</small></span>
+    </a>
+    <nav class="menu" aria-label="Навигация">
+      <a href="#what">Что разбираем</a>
+      <a href="#cjm">Карта клиента</a>
+      <a href="#result">Что получите</a>
+      <a href="#how">Как проходит</a>
+      <a href="#price">Стоимость</a>
+    </nav>
+    <a class="btn btn-primary" href="#contacts">Записаться на аудит</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker"><i></i>Аудит продаж · авторский метод CJM</div>
+      <h1>Найдём, где в ваших продажах <span class="accent">утекают деньги</span>.</h1>
+      <p class="lead">Глубокий аудит всей системы продаж — как полное обследование у врача. Точный диагноз и план, а не отчёт на полку.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contacts">Записаться на аудит</a>
+        <a class="btn btn-ghost" href="#what">Что входит</a>
+      </div>
+      <p class="hero-note">Начинаем с бесплатного созвона 15–20 минут.</p>
+    </div>
+    <div class="hero-art">
+      <div class="hero-card"><img src="images/lidiya-stage.jpg" alt="Лидия Попова — эксперт по продажам через коммуникацию"></div>
+      <div class="diag-card">
+        <b>Не отчёт на полку</b>
+        <p>А живая карта вашего бизнеса: где, почему и сколько денег вы теряете прямо сейчас.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGITATION -->
+<section class="section agitate">
+  <div class="container agitate-grid">
+    <div>
+      <div class="eyebrow">Давайте честно</div>
+      <h2 class="section-title">Вы чувствуете, что бизнес работает не в полную силу.</h2>
+      <p class="big">Клиенты есть, но покупают не так активно, как хотелось бы. Менеджеры что-то делают, а результата нет. Маркетинг приводит людей — и они куда-то исчезают. <b>Знакомо?</b></p>
+      <p class="big">Это не невезение. Это система. И у этой системы есть «дыры», через которые тихо утекает ваша прибыль. Их не видно изнутри — но видно, если пройти весь путь клиента целиком.</p>
+    </div>
+    <div class="symptom">
+      <div><i>?</i><span>Лидов много, а покупок мало</span></div>
+      <div><i>?</i><span>Клиент покупает один раз и исчезает</span></div>
+      <div><i>?</i><span>Сделки застревают на одном и том же этапе</span></div>
+      <div><i>?</i><span>Менеджеры «сливают» заявки, и непонятно где</span></div>
+      <div><i>?</i><span>В этом месяце просадка — а причина неясна</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="section compact">
+  <div class="container">
+    <div class="approach">
+      <div class="approach-grid">
+        <div>
+          <div class="eyebrow" style="color:#ffd7bd">Мой подход</div>
+          <h2>Не «посмотреть цифры», а провести полное обследование.</h2>
+          <p>Как врач, который не просто слушает жалобы, а делает диагностику — чтобы найти точную причину и назначить лечение. Сначала точный диагноз. Только потом — что менять.</p>
+        </div>
+        <div class="vs">
+          <div class="cross"><span>✕ Обычный «аудит»</span><p>Поверхностный взгляд на цифры и общий отчёт, который ложится на полку.</p></div>
+          <div class="check"><span>✓ Глубокий аудит продаж</span><p>Путь клиента его глазами, карта с точками слива и план, который можно внедрять сразу.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE ANALYZE: 5 questions -->
+<section id="what" class="section">
+  <div class="container">
+    <div class="eyebrow">Что мы будем разбирать</div>
+    <h2 class="section-title">5 ключевых вопросов, которые вскрывают всю систему продаж.</h2>
+    <p class="section-lead">Это не анкета ради галочки. Каждый вопрос — отдельный срез, на котором обычно и прячется утечка денег.</p>
+    <div class="qgrid">
+      <div class="qcard">
+        <h3>Что именно вы продаёте?</h3>
+        <p>Разбираем продукт, нишу, средний чек и цикл сделки. Понимаем, насколько ваше предложение попадает в «боль» клиента и почему он должен выбрать именно вас.</p>
+      </div>
+      <div class="qcard">
+        <h3>Где главная боль?</h3>
+        <p>Выясняем симптом: лидов много, но мало покупок? Покупают раз и исчезают? Застряли на этапе? Менеджеры сливают заявки? Находим точное место утечки.</p>
+      </div>
+      <div class="qcard">
+        <h3>Как устроена ваша «кухня»?</h3>
+        <p>Смотрим, как обрабатываются заявки: есть ли CRM или всё «в голове и блокнотиках», есть ли скрипты, кто обрабатывает и как быстро вы реагируете на заявку.</p>
+      </div>
+      <div class="qcard">
+        <h3>Какова цель аудита?</h3>
+        <p>Найти «дыру» в воронке? Подготовиться к масштабированию? Поднять конверсию? Или понять, почему именно сейчас просадка? От цели зависят выводы.</p>
+      </div>
+      <div class="qcard full">
+        <h3>Карта пути клиента (CJM): где он «сливается» по дороге к кассе?</h3>
+        <p>Это мой авторский подход и сердце аудита. Мы проходим весь путь вашего клиента — от первого касания до покупки и дальше — и смотрим на него его глазами. На этой карте видны эмоциональные и логические «ямы», в которых клиент молча уходит к конкурентам. Подробно — в следующем блоке.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CJM JOURNEY -->
+<section id="cjm" class="section cjm">
+  <div class="container">
+    <div class="eyebrow">Авторский метод</div>
+    <h2 class="section-title" style="color:#fff">Карта пути клиента: вы увидите бизнес глазами покупателя.</h2>
+    <p class="section-lead">Воронка показывает, <b style="color:#fff">где</b> теряется клиент. Карта пути клиента отвечает на вопрос <b style="color:#fff">почему</b> — с учётом его эмоций, сомнений и барьеров. Проходим каждое касание:</p>
+    <div class="journey">
+      <div class="stage"><b>1</b><h3>Первое впечатление</h3><p>Что он чувствует, когда впервые видит вас? Зацепило или равнодушно пролистал?</p></div>
+      <div class="stage"><b>2</b><h3>Прогрев</h3><p>Как вы ведёте его к решению? Не слишком ли длинный путь? Не теряется ли он по дороге?</p></div>
+      <div class="stage"><b>3</b><h3>Момент выбора</h3><p>Почему он колеблется? Какие сомнения остались не закрыты?</p></div>
+      <div class="stage"><b>4</b><h3>Покупка</h3><p>Насколько легко ему заплатить? Нет ли барьеров, о которых вы даже не подозреваете?</p></div>
+      <div class="stage"><b>5</b><h3>После покупки</h3><p>Что он чувствует? Возвращается ли снова или уходит навсегда?</p></div>
+    </div>
+    <div class="cjm-note">На этой карте мы найдём «точки слива» — места, где клиент молча уходит к конкурентам. <b>И вы наконец увидите свой бизнес глазами того, кто платит вам деньги.</b></div>
+  </div>
+</section>
+
+<!-- RESULT / DELIVERABLES -->
+<section id="result" class="section">
+  <div class="container">
+    <div class="eyebrow">Что вы получите в результате</div>
+    <h2 class="section-title">Не отчёт на 50 страниц «на полку». Живую карту вашего бизнеса.</h2>
+    <p class="section-lead">Пять конкретных результатов, которые можно открыть и начать действовать уже на этой неделе.</p>
+    <div class="deliver">
+      <div class="dcard"><div class="ic">1</div><div><h3>Точный диагноз</h3><p>Где именно вы теряете деньги прямо сейчас — в рублях, в процентах, в конкретных этапах воронки.</p></div></div>
+      <div class="dcard"><div class="ic">2</div><div><h3>CJM-карта клиента</h3><p>Путь вашего покупателя с отмеченными «точками слива» — наглядно, где и почему уходит клиент.</p></div></div>
+      <div class="dcard win"><div class="ic">3</div><div><h3>Список быстрых побед</h3><p>3–5 действий, которые можно внедрить уже на этой неделе, чтобы сразу поднять конверсию.</p></div></div>
+      <div class="dcard"><div class="ic">4</div><div><h3>План лечения</h3><p>Пошаговая дорожная карта: что менять в системе продаж в ближайшие 1–3 месяца.</p></div></div>
+      <div class="dcard" style="grid-column:1 / -1"><div class="ic">5</div><div><h3>Рекомендации по команде</h3><p>Нужно ли менять менеджеров, переписывать скрипты, внедрять CRM или перестраивать мотивацию — конкретно по вашей ситуации.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="section" style="background:linear-gradient(180deg,#fff8ef,#fbf5ec)">
+  <div class="container">
+    <div class="eyebrow">Как это происходит</div>
+    <h2 class="section-title">Прозрачный процесс за 7–10 дней.</h2>
+    <p class="section-lead">Без воды и бесконечных созвонов. Чёткие этапы — от установочной встречи до защиты результатов.</p>
+    <div class="proc">
+      <div class="pstep"><h3>Установочная встреча</h3><p>Созваниваемся на 1 час, я задаю уточняющие вопросы и собираю вводные по вашим продажам.</p><span class="when">1 час</span></div>
+      <div class="pstep"><h3>Доступы и погружение</h3><p>Вы даёте доступ к CRM, аналитике и записям звонков. Я изучаю всё, «слушаю стены».</p><span class="when">несколько дней</span></div>
+      <div class="pstep"><h3>Путь клиента</h3><p>Прохожу путь вашего покупателя вместе с ним, строю CJM и отмечаю точки слива.</p><span class="when">основной этап</span></div>
+      <div class="pstep"><h3>Защита результатов</h3><p>Встреча на 1,5–2 часа: лично презентую выводы и отвечаю на все вопросы. Без воды, только суть.</p><span class="when">1,5–2 часа</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERT -->
+<section class="section expert">
+  <div class="container">
+    <div class="expert-grid">
+      <div class="expert-photo"><img src="images/founders-ivan-lidiya.jpg" alt="Лидия Попова — эксперт по построению системных продаж"></div>
+      <div>
+        <div class="eyebrow">Кто проводит аудит</div>
+        <h2 class="section-title" style="color:#fff">Лидия Попова</h2>
+        <p class="section-lead">Эксперт по построению системных продаж и продажам через коммуникацию, сооснователь центра «ПРОпродажи». Я не пересказываю книжки — я каждый день разбираю реальные звонки, встречи и переписки и вижу, где именно ломается продажа.</p>
+        <div class="regalia">
+          <div>Член Правления и официальный представитель Ассоциации бизнес-тренеров России по Оренбургу и области</div>
+          <div>Лектор Всероссийского общества «Знание»</div>
+          <div>Наставник в клубе предпринимателей «Терра»</div>
+          <div>Повышение квалификации по бизнес-тренингу (Торгово-промышленная палата РФ)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section id="price" class="section">
+  <div class="container">
+    <div class="invest-card">
+      <div>
+        <div class="eyebrow">Инвестиция</div>
+        <h3 class="invest-head">Считаю индивидуально под вашу задачу.</h3>
+        <p class="sub">Стоимость зависит от ниши, числа каналов и глубины разбора. Назову её на первом созвоне, когда пойму вашу ситуацию — без скрытых доплат потом.</p>
+        <ul class="incl">
+          <li>Установочная встреча (1 час)</li>
+          <li>Глубокий разбор продукта, боли, «кухни» и целей</li>
+          <li>Авторская CJM-карта с точками слива</li>
+          <li>Список быстрых побед и план на 1–3 месяца</li>
+          <li>Личная защита результатов (1,5–2 часа)</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacts">Обсудить аудит на созвоне</a>
+        <p class="sub" style="margin-top:16px">Вложение окупается уже в первый месяц после внедрения рекомендаций.</p>
+      </div>
+      <div class="phase2">
+        <span class="tag">Что дальше</span>
+        <h3>Фаза 2: Лечение</h3>
+        <p>Аудит — это диагноз. После того как я покажу вам карту «болезни», мы можем перейти к лечению: вместе с вашей командой перестроим процессы, напишем новые скрипты и настроим CRM так, чтобы продажи пошли в гору. Аудит не обязывает идти дальше — но даёт чёткую точку старта.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section compact">
+  <div class="container">
+    <div class="eyebrow">Частые вопросы</div>
+    <h2 class="section-title">Что обычно спрашивают перед стартом.</h2>
+    <div class="faq">
+      <details open><summary>А если у нас нет CRM и аналитики?</summary><p>Это само по себе уже часть диагноза. Я работаю с тем, что есть: записи звонков, переписки, ваши наблюдения, путь клиента. Часто отсутствие CRM — и есть одна из «дыр», через которые утекают деньги.</p></details>
+      <details><summary>Чем это отличается от обычной консультации?</summary><p>Консультация — это разговор и общие советы. Аудит — это полное обследование с доступом к вашим данным, прохождением пути клиента и конкретными выводами в рублях и процентах. На выходе вы получаете карту и план, а не «попробуйте вот это».</p></details>
+      <details><summary>Сколько времени это займёт у меня лично?</summary><p>Около 1 часа на установочной встрече плюс выдача доступов, и 1,5–2 часа на защите результатов. Всю основную работу — изучение, построение карты — я беру на себя.</p></details>
+      <details><summary>Вы обязываете покупать «лечение» после аудита?</summary><p>Нет. Аудит — самостоятельный продукт. Вы получаете диагноз и план и можете внедрять его сами. Если захотите — мы перейдём к Фазе 2 и сделаем это вместе.</p></details>
+      <details><summary>Как понять, подходим ли мы друг другу?</summary><p>Давайте созвонимся на 15–20 минут. Я задам несколько уточняющих вопросов, и мы вместе поймём, есть ли смысл и что именно вам даст аудит.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section compact" id="quiz">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">Быстрый способ</div>
+    <h2 class="section-title" style="text-align:center;max-width:840px;margin:0 auto 20px">Сколько вы теряете на продажах? Посчитайте за 1 минуту.</h2>
+    <p class="section-lead" style="text-align:center;max-width:680px;margin:0 auto 30px">Ответьте на 4 вопроса — калькулятор покажет примерную сумму потерь. В конце — бесплатный разбор.</p>
+    <div style="max-width:720px;margin:0 auto;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#0b1c2c">
+      <iframe src="quiz-calc.html" title="Калькулятор потерь в продажах" loading="lazy" style="width:100%;height:840px;border:0;display:block"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contacts" class="cta">
+  <div class="container cta-grid">
+    <div>
+      <div class="eyebrow" style="color:#ffd7bd">Первый шаг</div>
+      <h2 class="section-title" style="color:#fff">Готовы узнать, где ваш бизнес теряет деньги прямо сейчас?</h2>
+      <p class="section-lead" style="color:#c9d7dd">Давайте созвонимся на 15–20 минут. Я задам несколько уточняющих вопросов, и мы поймём, подходим ли мы друг другу. С теплом и верой в ваш успех — Лидия Попова.</p>
+    </div>
+    <div class="contact-card">
+      <h3 style="margin:0 0 10px;font-size:27px;letter-spacing:-.04em">Написать напрямую</h3>
+      <p style="margin:0 0 18px;color:#c9d7dd">Без формы на 18 полей. Просто напишите в Telegram — отвечу лично.</p>
+      <a href="https://t.me/LidiaPopova81" target="_blank" rel="noopener"><span>Лидия Попова</span><span>→</span></a>
+      <a href="index.html"><span>← Вернуться на основной сайт</span><span></span></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div>© ПРОпродажи · Глубокий аудит продаж. Лидия Попова — эксперт по построению системных продаж.</div>
+    <div>Диагноз · CJM-карта · быстрые победы · план лечения</div>
+  </div>
+</footer>
+</body>
+</html>

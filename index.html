@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ПРОпродажи — продажи через коммуникацию. Обучение, тренировки, разборы</title>
+<meta name="description" content="Центр ПРОпродажи (Лидия и Иван Поповы, Оренбург): обучаем, тренируем и сопровождаем продажи на реальных звонках, встречах и переписках. Не курс ради конспекта, а навык до результата." />
+<style>
+:root{
+  --ink:#101722; --muted:#667085;
+  --paper:#fbf5ec; --paper2:#fffaf2; --white:#ffffff;
+  --navy:#071422; --navy2:#0e2438; --blue:#255e84; --sky:#bfe7ef;
+  --orange:#f46f2c; --gold:#d8a34d;
+  --line:rgba(16,23,34,.12);
+  --shadow:0 28px 80px rgba(7,20,34,.18);
+  --radius:28px; --radius2:44px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 36px));margin-inline:auto}
+.header{position:sticky;top:0;z-index:50;background:rgba(251,245,236,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(16,23,34,.08)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.02em}
+.mark{width:42px;height:42px;border-radius:16px;background:linear-gradient(135deg,var(--orange),#ffb36b);display:grid;place-items:center;color:#fff;font-weight:1000;box-shadow:0 12px 34px rgba(244,111,44,.35)}
+.brand span small{display:block;font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-top:-3px}
+.menu{display:flex;align-items:center;gap:24px;color:#344054;font-size:14px;font-weight:750}
+.menu a:hover{color:var(--orange)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 22px;font-weight:850;letter-spacing:-.01em;cursor:pointer;transition:.2s transform ease,.2s box-shadow ease,.2s background ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 18px 36px rgba(244,111,44,.32)}
+.btn-dark{background:var(--navy);color:#fff;box-shadow:0 18px 36px rgba(7,20,34,.24)}
+.btn-ghost{background:rgba(255,255,255,.7);border:1px solid rgba(16,23,34,.12);color:var(--ink)}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 12% 8%,rgba(244,111,44,.36),transparent 28%),radial-gradient(circle at 84% 22%,rgba(191,231,239,.28),transparent 30%),linear-gradient(135deg,#071422 0%,#0d1e31 46%,#183d53 100%)}
+.hero::after{content:"";position:absolute;inset:auto -12% -28% -12%;height:440px;background:radial-gradient(ellipse,rgba(255,255,255,.14),transparent 68%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:86px 0 72px;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:999px;color:#dff8ff;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:block;box-shadow:0 0 0 6px rgba(244,111,44,.18)}
+h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-spacing:-.05em;max-width:880px}
+.lead{font-size:clamp(18px,2.1vw,23px);line-height:1.4;color:#e7f2f4;max-width:680px;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:760px}
+.trust{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);border-radius:22px;padding:16px 18px;min-height:96px}
+.trust b{font-size:23px;display:block;letter-spacing:-.03em}
+.trust span{display:block;color:#bdd5dc;font-size:13px;margin-top:3px}
+.hero-art{position:relative;min-height:700px}
+.portrait-card{position:absolute;right:5%;top:0;width:62%;border-radius:44px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.18);transform:rotate(2deg);background:#111}
+.portrait-card img{height:620px;width:100%;object-fit:cover;object-position:center}
+.photo-stack{position:absolute;left:0;bottom:18px;width:56%;display:grid;gap:14px}
+.mini-photo{border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 60px rgba(0,0,0,.28);background:#111}
+.mini-photo:nth-child(1){transform:rotate(-4deg);width:96%}
+.mini-photo:nth-child(2){transform:rotate(3deg);width:88%;margin-left:52px;margin-top:-8px}
+.mini-photo img{height:170px;width:100%;object-fit:cover}
+.float-card{position:absolute;right:0;bottom:78px;width:280px;background:rgba(255,255,255,.94);color:var(--ink);border-radius:28px;padding:22px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.float-card strong{font-size:30px;line-height:1;display:block;letter-spacing:-.04em;color:var(--orange)}
+.float-card span{color:#344054;font-weight:700;font-size:15px}
+.section{padding:90px 0}
+.section.compact{padding:58px 0}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.18em;font-weight:950;color:var(--orange);margin-bottom:14px}
+.section-title{font-size:clamp(32px,4.6vw,58px);line-height:1;letter-spacing:-.045em;margin:0 0 22px;max-width:900px}
+.section-lead{font-size:19px;color:#475467;max-width:780px;margin:0 0 34px}
+.bento{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px;margin-top:34px}
+.card{background:rgba(255,255,255,.76);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 14px 46px rgba(16,23,34,.08)}
+.card.dark{background:var(--navy);color:#fff;border-color:rgba(255,255,255,.1)}
+.card.orange{background:linear-gradient(135deg,#f46f2c,#ff9a4d);color:#fff;border:0}
+.card h3{margin:0 0 12px;font-size:23px;letter-spacing:-.03em;line-height:1.1}
+.card p{margin:0;color:#5a6678}
+.card.dark p,.card.orange p{color:rgba(255,255,255,.82)}
+.card.big{grid-row:span 2;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.62))}
+.problem-list{display:grid;gap:14px;margin-top:18px}
+.problem{display:flex;gap:12px;align-items:flex-start}
+.problem i{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff0e8;color:var(--orange);font-style:normal;font-weight:1000}
+.photo-band{display:grid;grid-template-columns:1fr 1.15fr .85fr;gap:18px;margin-top:32px}
+.photo-tile{position:relative;overflow:hidden;border-radius:34px;background:#111;min-height:260px;box-shadow:var(--shadow)}
+.photo-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo-tile.tall{min-height:560px}
+.photo-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.62))}
+.photo-caption{position:absolute;left:22px;right:22px;bottom:20px;color:#fff;z-index:1;font-weight:850;font-size:19px;line-height:1.14}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:40px;counter-reset:step}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px 18px;min-height:220px;overflow:hidden}
+.step::before{counter-increment:step;content:"0" counter(step);display:block;color:rgba(244,111,44,.24);font-size:44px;font-weight:1000;line-height:1;margin-bottom:18px;letter-spacing:-.07em}
+.step h3{font-size:18px;line-height:1.05;margin:0 0 10px;letter-spacing:-.03em}
+.step p{font-size:14px;color:#667085;margin:0}
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:38px;align-items:center}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius2);padding:42px;box-shadow:var(--shadow)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:0}
+.compare-box{border-radius:28px;padding:26px;background:#f8efe3;border:1px solid rgba(16,23,34,.08)}
+.compare-box.good{background:#eaf7f2}
+.compare-box h3{margin:0 0 16px;font-size:23px;letter-spacing:-.04em}
+.compare-box ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.compare-box li{display:flex;gap:10px;color:#475467}
+.compare-box li:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);margin-top:9px;flex:0 0 7px}
+.compare-box.good li:before{background:#1f9d6a}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.price-card{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:0 14px 45px rgba(16,23,34,.08);min-height:320px;display:flex;flex-direction:column}
+.price-card.featured{background:linear-gradient(135deg,#071422,#173a50);color:#fff;transform:translateY(-10px)}
+.price-card .tag{align-self:flex-start;font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:7px 10px;background:#fff0e8;color:var(--orange);margin-bottom:22px}
+.price-card.featured .tag{background:rgba(255,255,255,.12);color:#ffd7bd}
+.price-card h3{font-size:25px;margin:0 0 10px;letter-spacing:-.04em}
+.price{font-size:36px;line-height:1;font-weight:1000;letter-spacing:-.05em;margin:12px 0 18px}
+.price small{font-size:15px;color:#667085;font-weight:800;letter-spacing:-.01em}
+.price-card.featured .price small,.price-card.featured p{color:rgba(255,255,255,.76)}
+.price-card p{color:#667085;margin:0 0 20px}
+.price-card ul{padding:0;margin:auto 0 0;list-style:none;display:grid;gap:10px;color:#475467;font-size:14px}
+.price-card.featured ul{color:rgba(255,255,255,.82)}
+.price-card li::before{content:"✓";color:var(--orange);font-weight:1000;margin-right:8px}
+.founders{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.founders::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(244,111,44,.18);right:-190px;top:-190px;filter:blur(10px)}
+.founders .section-lead{color:#c9d7dd}
+.founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch;position:relative;z-index:1}
+.founder-photo{border-radius:42px;overflow:hidden;min-height:560px;box-shadow:0 30px 90px rgba(0,0,0,.34)}
+.founder-photo img{height:100%;width:100%;object-fit:cover;object-position:center 20%}
+.bio-cards{display:grid;gap:18px}
+.bio{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:32px;padding:30px}
+.bio h3{font-size:29px;margin:0 0 10px;letter-spacing:-.04em}
+.bio p{color:#d7e3e8;margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badges span{display:inline-flex;border-radius:999px;padding:9px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:13px;font-weight:800;color:#e5f3f8}
+.proof-grid{display:grid;grid-template-columns:1fr .9fr .9fr;gap:18px;margin-top:34px}
+.proof{background:#fff;border:1px solid var(--line);border-radius:34px;padding:18px;box-shadow:0 16px 52px rgba(16,23,34,.09)}
+.proof img{height:280px;width:100%;object-fit:cover;border-radius:24px;background:#f7f3eb}
+.proof.main img{height:380px;object-fit:cover}
+.proof.doc img{object-fit:contain;background:#f7f3eb}
+.proof h3{font-size:20px;margin:16px 8px 4px;letter-spacing:-.03em}
+.proof p{margin:0 8px 8px;color:#667085;font-size:14px}
+.offer-band{background:linear-gradient(135deg,#071422,#15384e);color:#fff;border-radius:54px;padding:54px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.offer-band::before{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(244,111,44,.22);left:-160px;bottom:-200px;filter:blur(8px)}
+.offer-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.offer-grid .section-lead{color:#cfe0e6}
+.offer-points{display:grid;gap:12px}
+.offer-points div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px 18px;font-weight:750;color:#eaf3f6;display:flex;gap:10px}
+.offer-points div::before{content:"→";color:var(--orange);font-weight:1000}
+.partner{background:linear-gradient(135deg,#fff,#fff5e8);border-radius:54px;padding:54px;border:1px solid rgba(244,111,44,.16);box-shadow:var(--shadow)}
+.partner-grid{display:grid;grid-template-columns:1fr .9fr;gap:36px;align-items:center}
+.percent{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.percent div{background:#fff;border:1px solid rgba(244,111,44,.18);border-radius:28px;padding:24px;box-shadow:0 12px 30px rgba(244,111,44,.08)}
+.percent b{font-size:38px;letter-spacing:-.06em;color:var(--orange);display:block;line-height:1}
+.percent span{font-size:14px;color:#667085;font-weight:800}
+.cta{background:var(--navy);color:#fff;padding:86px 0;border-radius:58px 58px 0 0;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(244,111,44,.26),transparent 30%),radial-gradient(circle at 80% 20%,rgba(191,231,239,.16),transparent 34%)}
+.cta-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:36px;padding:30px}
+.contact-card a{display:flex;justify-content:space-between;align-items:center;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:18px 20px;margin-top:12px;font-weight:900}
+.contact-card a:hover{background:rgba(255,255,255,.14)}
+.footer{background:var(--navy);color:#9fb2bd;border-top:1px solid rgba(255,255,255,.08);padding:28px 0;font-size:13px}
+.footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:1040px){
+ .menu{display:none}.hero-grid,.split,.founder-grid,.partner-grid,.cta-grid,.offer-grid{grid-template-columns:1fr}.hero-art{min-height:640px}.steps{grid-template-columns:repeat(3,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.bento,.photo-band,.proof-grid{grid-template-columns:1fr 1fr}.photo-tile.tall{min-height:360px}.card.big{grid-row:auto}.trust-row{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:680px){
+ .container{width:min(100% - 24px,1180px)}.nav{height:66px}.nav-cta .btn-ghost{display:none}.btn{padding:13px 16px;font-size:14px}.brand span{font-size:15px}.brand span small{font-size:9px}.mark{width:38px;height:38px;border-radius:14px}
+ .hero-grid{padding:42px 0 44px;gap:22px}h1{font-size:40px;letter-spacing:-.04em}.lead{font-size:17px}.hero-actions{margin:24px 0}.hero-actions .btn{width:100%}.trust-row{grid-template-columns:1fr;gap:10px}.trust{min-height:auto;padding:14px 16px}.trust b{font-size:21px}
+ .hero-art{min-height:560px}.portrait-card{right:0;top:10px;width:80%;border-radius:34px}.portrait-card img{height:450px}.photo-stack{width:66%;bottom:12px}.mini-photo img{height:132px}.float-card{right:6px;bottom:50px;width:210px;padding:18px;border-radius:24px}.float-card strong{font-size:25px}
+ .section{padding:62px 0}.section.compact{padding:42px 0}.section-title{font-size:32px}.section-lead{font-size:17px}.bento,.photo-band,.steps,.prices,.proof-grid,.compare,.percent{grid-template-columns:1fr}.card,.panel,.partner,.offer-band{border-radius:28px;padding:24px}.photo-tile,.photo-tile.tall{min-height:320px}.step{min-height:auto}.price-card.featured{transform:none}.founder-photo{min-height:440px}.proof img,.proof.main img{height:260px}.cta{border-radius:36px 36px 0 0;padding:58px 0}.contact-card{padding:22px;border-radius:28px}.footer .container{display:block}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="ПРОпродажи">
+      <div class="mark">П</div>
+      <span>ПРОпродажи<small>продажи через коммуникацию</small></span>
+    </a>
+    <nav class="menu" aria-label="Навигация">
+      <a href="#about">О центре</a>
+      <a href="#work">Как работаем</a>
+      <a href="#formats">Форматы</a>
+      <a href="#audit">Аудит продаж</a>
+      <a href="#founders">Основатели</a>
+      <a href="#partner">Партнёрам</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://t.me/LidiaPopova81">Telegram</a>
+      <a class="btn btn-primary" href="#contacts">Консультация</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker"><i></i>Практика продаж · Оренбург · с 2005 года</div>
+      <h1>Наводим порядок в ваших продажах.</h1>
+      <p class="lead">Обучаем, тренируем и сопровождаем продажи через живую коммуникацию — на ваших реальных звонках, встречах и переписках. До навыка и результата, а не до конспекта.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contacts">Получить консультацию</a>
+        <a class="btn btn-ghost" href="#formats">Посмотреть форматы</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust"><b>6 / 12 мес.</b><span>сопровождение и внедрение</span></div>
+        <div class="trust"><b>живые разборы</b><span>звонки, встречи, возражения</span></div>
+        <div class="trust"><b>онлайн / офлайн</b><span>команды и личные продажи</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Фото центра ПРОпродажи">
+      <div class="portrait-card"><img src="images/lidiya-stage.jpg" alt="Лидия Попова ведёт обучение по продажам"></div>
+      <div class="photo-stack">
+        <div class="mini-photo"><img src="images/lidiya-writing-flipchart.jpg" alt="Разбор у флипчарта"></div>
+        <div class="mini-photo"><img src="images/lidiya-flipchart-1on1.jpg" alt="Индивидуальная тренировка"></div>
+      </div>
+      <div class="float-card"><strong>не курс</strong><span>а практика, разборы и сопровождение до результата</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="eyebrow">Что это за центр</div>
+    <h2 class="section-title">ПРОпродажи — для тех, кому нужны не красивые конспекты, а продажи в реальной жизни.</h2>
+    <p class="section-lead">Клиент покупает не потому, что менеджер выучил скрипт. Клиент покупает, когда его услышали, задали правильные вопросы, показали ценность и спокойно довели до решения. Этому мы и учим — на ваших же диалогах.</p>
+    <div class="bento">
+      <div class="card big">
+        <div>
+          <h3>Где обычно ломается продажа</h3>
+          <p>Не в одном «волшебном» скрипте. Чаще рассыпается вся цепочка — от первого сообщения до закрытия сделки.</p>
+        </div>
+        <div class="problem-list">
+          <div class="problem"><i>!</i><span>Менеджеры говорят разными словами и теряют смысл предложения.</span></div>
+          <div class="problem"><i>!</i><span>Цена называется рано — дальше начинается торг или молчание.</span></div>
+          <div class="problem"><i>!</i><span>Возражения закрываются скидкой, спором или оправданиями.</span></div>
+          <div class="problem"><i>!</i><span>Звонки, встречи и переписки не разбираются регулярно.</span></div>
+        </div>
+      </div>
+      <div class="card dark"><h3>Для бизнеса</h3><p>Помогаем собственникам и руководителям увидеть, где команда теряет клиентов, и внедрить понятную систему работы.</p></div>
+      <div class="card"><h3>Для менеджеров</h3><p>Тренируем вопросы, презентацию ценности, работу с возражениями и уверенное закрытие сделки.</p></div>
+      <div class="card orange"><h3>Для экспертов</h3><p>Помогаем продавать не «услугу по прайсу», а смысл, результат и понятную пользу для клиента.</p></div>
+      <div class="card"><h3>Для партнёров</h3><p>Даём возможность рекомендовать центр и получать вознаграждение за оплаченных клиентов.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Фото-полоса с групповыми снимками временно убрана: вернём, когда будут фото с согласием участников -->
+
+<section id="work" class="section">
+  <div class="container">
+    <div class="eyebrow">Как проходит работа</div>
+    <h2 class="section-title">Сначала разбираем реальность. Потом тренируем навык.</h2>
+    <p class="section-lead">Формат построен просто: меньше абстрактной теории, больше практики, обратной связи и регулярного внедрения в работу.</p>
+    <div class="steps">
+      <div class="step"><h3>Диагностика</h3><p>Смотрим, где сейчас теряются заявки, звонки, встречи и сделки.</p></div>
+      <div class="step"><h3>Обучение</h3><p>Даём логику вопросов, презентации ценности и ведения клиента.</p></div>
+      <div class="step"><h3>Тренировки</h3><p>Отрабатываем фразы, паузы, ответы на возражения и закрытие.</p></div>
+      <div class="step"><h3>Разборы</h3><p>Разбираем реальные ситуации: звонки, переписки, встречи, ошибки.</p></div>
+      <div class="step"><h3>Внедрение</h3><p>Переносим новые действия в ежедневную работу команды или эксперта.</p></div>
+      <div class="step"><h3>Сопровождение</h3><p>Держим регулярность 6 или 12 месяцев, чтобы навык закрепился.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="container split">
+    <div>
+      <div class="eyebrow">Почему не просто курс</div>
+      <h2 class="section-title">Знания без практики быстро превращаются в старую привычку.</h2>
+      <p class="section-lead">После обычного курса человек вдохновился, записал идеи — и через неделю снова продаёт как раньше. Здесь обучение сразу привязано к реальным диалогам и конкретным действиям, которые мы доводим до автоматизма.</p>
+      <a class="btn btn-dark" href="#contacts">Разобрать вашу ситуацию</a>
+    </div>
+    <div class="panel compare">
+      <div class="compare-box">
+        <h3>До</h3>
+        <ul>
+          <li>нет единой логики общения</li>
+          <li>возражения тушатся скидкой</li>
+          <li>звонки не разбираются</li>
+          <li>собственник сам продаёт лучше всех</li>
+        </ul>
+      </div>
+      <div class="compare-box good">
+        <h3>После</h3>
+        <ul>
+          <li>есть понятная структура диалога</li>
+          <li>менеджеры задают правильные вопросы</li>
+          <li>ошибки разбираются регулярно</li>
+          <li>команда продаёт увереннее и системно</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formats" class="section">
+  <div class="container">
+    <div class="eyebrow">Форматы</div>
+    <h2 class="section-title">Можно начать с короткого формата или зайти в полноценное сопровождение.</h2>
+    <p class="section-lead">Линейка подходит для знакомства, обучения, углублённой практики и работы с командой на дистанции 6–12 месяцев.</p>
+    <div class="prices">
+      <div class="price-card">
+        <div class="tag">старт</div>
+        <h3>Интенсив по продажам</h3>
+        <div class="price">0 ₽</div>
+        <p>Быстрое знакомство с подходом центра и типичными ошибками в продажах.</p>
+        <ul><li>первый вход</li><li>подходит для знакомства</li><li>дальше — практикум</li></ul>
+      </div>
+      <div class="price-card">
+        <div class="tag">практика</div>
+        <h3>Практикум по продажам</h3>
+        <div class="price">1 990 ₽</div>
+        <p>Короткий формат, чтобы увидеть ошибки и потренировать конкретные действия.</p>
+        <ul><li>разбор ситуаций</li><li>практические задания</li><li>понятные шаги</li></ul>
+      </div>
+      <div class="price-card">
+        <div class="tag">рост</div>
+        <h3>Марафон по продажам</h3>
+        <div class="price">14 900 ₽</div>
+        <p>Больше практики, регулярности и работы с коммуникацией в продажах.</p>
+        <ul><li>живой формат</li><li>работа с возражениями</li><li>закрепление навыка</li></ul>
+      </div>
+      <div class="price-card featured">
+        <div class="tag">главный продукт</div>
+        <h3>VIP / сопровождение</h3>
+        <div class="price">115 000 ₽ <small>курс</small></div>
+        <p>Углублённая работа с продажами, практикой и внедрением. Для тех, кому нужен результат, а не галочка «прошёл обучение».</p>
+        <ul><li>живые тренировки</li><li>разборы реальных сделок</li><li>поддержка внедрения</li><li>6 или 12 месяцев</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audit" class="section compact">
+  <div class="container offer-band">
+    <div class="offer-grid">
+      <div>
+        <div class="eyebrow" style="color:#ffd7bd">Отдельная услуга</div>
+        <h2 class="section-title" style="color:#fff">Глубокий аудит продаж: находим, где утекают деньги.</h2>
+        <p class="section-lead">Отдельная услуга Лидии Поповой. Проходим весь путь клиента его глазами, строим карту пути клиента (CJM) и показываем конкретные «точки слива». Есть две версии — выберите свою:</p>
+        <div class="hero-actions" style="margin:0">
+          <a class="btn btn-primary" href="audit-business.html">Для бизнеса и отдела продаж →</a>
+          <a class="btn btn-ghost" href="audit-experts.html">Для экспертов и сетевиков →</a>
+        </div>
+      </div>
+      <div class="offer-points">
+        <div>Точный диагноз: где вы теряете деньги прямо сейчас</div>
+        <div>CJM-карта клиента с отмеченными «точками слива»</div>
+        <div>3–5 быстрых побед на ближайшую неделю</div>
+        <div>Пошаговый план на 1–3 месяца</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founders" class="section founders">
+  <div class="container">
+    <div class="eyebrow">Основатели</div>
+    <h2 class="section-title">Не пересказывают продажи из книжек. Сами прошли путь продаж, управления и бизнеса.</h2>
+    <p class="section-lead">В основе центра — опыт менеджеров, руководителей, предпринимателей и тренеров, которые работают с продажами с 2005 года.</p>
+    <div class="founder-grid">
+      <div class="founder-photo"><img src="images/founders-ivan-lidiya.jpg" alt="Иван и Лидия Поповы — основатели центра ПРОпродажи"></div>
+      <div class="bio-cards">
+        <div class="bio"><h3>Лидия Попова</h3><p>Эксперт по продажам через коммуникацию, сооснователь центра «ПРОпродажи». Член Правления и официальный представитель Ассоциации бизнес-тренеров России по Оренбургу и области, лектор Всероссийского общества «Знание», наставник в клубе предпринимателей «Терра».</p><div class="badges"><span>продажи через коммуникацию</span><span>бизнес-тренинг</span><span>практика</span><span>мероприятия</span></div></div>
+        <div class="bio"><h3>Иван Попов</h3><p>Сооснователь центра, практик продаж и предпринимательства. Опыт включает личные продажи, управление командами, собственные бизнесы и переговоры.</p><div class="badges"><span>управление</span><span>бизнес</span><span>переговоры</span><span>команды</span></div></div>
+        <div class="bio"><h3>Что для нас важно</h3><p>Мы делаем упор не на мотивацию «на эмоциях», а на регулярные тренировки, разборы и внедрение навыка в реальные продажи. Результат — система, которая работает без вас.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Доверие</div>
+    <h2 class="section-title">Признание в профессии — рядом, а не вместо смысла.</h2>
+    <p class="section-lead">Регалии и документы подтверждают экспертность. Но главный аргумент — реальная практика и понятная работа с продажами.</p>
+    <div class="proof-grid">
+      <div class="proof main"><img src="images/lidiya-stage.jpg" alt="Лидия Попова выступает как эксперт"><h3>Выступления и лекции</h3><p>Лектор общества «Знание», представитель Ассоциации бизнес-тренеров России.</p></div>
+      <div class="proof"><img src="images/founders-ivan-lidiya.jpg" alt="Иван и Лидия Поповы — практики продаж"><h3>Практики с 2005 года</h3><p>Продажи, управление и собственные бизнесы — а не теория из книжек.</p></div>
+      <div class="proof doc"><img src="images/certificate-tpp.jpg" alt="Сертификат о повышении квалификации"><h3>Повышение квалификации</h3><p>Торгово-промышленная палата РФ: бизнес-обучение и тренинг.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="partner" class="section compact">
+  <div class="container partner">
+    <div class="partner-grid">
+      <div>
+        <div class="eyebrow">Партнёрская программа</div>
+        <h2 class="section-title">Рекомендуйте центр и получайте вознаграждение.</h2>
+        <p class="section-lead">Партнёры знакомят предпринимателей, менеджеров и экспертов с программами «ПРОпродажи». Если клиент оплачивает продукт центра, партнёр получает выплату.</p>
+        <a class="btn btn-primary" href="#contacts">Узнать условия</a>
+      </div>
+      <div class="percent">
+        <div><b>30%</b><span>с личной продажи</span></div>
+        <div><b>10%</b><span>с продажи в первой линии</span></div>
+        <div><b>5%</b><span>с продажи во второй линии</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section compact" id="quiz">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">Быстрый способ</div>
+    <h2 class="section-title" style="text-align:center;max-width:840px;margin:0 auto 20px">Не хотите читать? Пройдите мини-диагностику за 2 минуты.</h2>
+    <p class="section-lead" style="text-align:center;max-width:680px;margin:0 auto 30px">Ответьте на несколько вопросов — и узнайте, где именно теряете клиентов. В конце — бесплатный разбор от Лидии.</p>
+    <div style="max-width:720px;margin:0 auto;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#0b1c2c">
+      <iframe src="quiz-razbor.html" title="Мини-диагностика продаж" loading="lazy" style="width:100%;height:840px;border:0;display:block"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="cta">
+  <div class="container cta-grid">
+    <div>
+      <div class="eyebrow">Консультация</div>
+      <h2 class="section-title">Хотите понять, что мешает вашим продажам расти?</h2>
+      <p class="section-lead">Напишите, кто вы, что продаёте и где сейчас проблема: заявки, звонки, встречи, возражения, команда или система. На консультации подскажем, с чего начать.</p>
+    </div>
+    <div class="contact-card">
+      <h3 style="margin:0 0 10px;font-size:27px;letter-spacing:-.04em">Связаться напрямую</h3>
+      <p style="margin:0 0 18px;color:#c9d7dd">Без формы на 18 полей. Просто напишите в Telegram.</p>
+      <a href="https://t.me/LidiaPopova81" target="_blank" rel="noopener"><span>Лидия Попова</span><span>→</span></a>
+      <a href="https://t.me/Popov_Ivan_A" target="_blank" rel="noopener"><span>Иван Попов</span><span>→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div>© ПРОпродажи. Продажи через коммуникацию. Обучение · тренировки · разборы · сопровождение.</div>
+    <div>Оренбург · онлайн и офлайн</div>
+  </div>
+</footer>
+</body>
+</html>
