@@ -119,6 +119,20 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
 .bio p{color:#d7e3e8;margin:0}
 .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .badges span{display:inline-flex;border-radius:999px;padding:9px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:13px;font-weight:800;color:#e5f3f8}
+.bio-list{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.bio-list li{position:relative;padding-left:24px;color:#d7e3e8;font-size:15px;line-height:1.4}
+.bio-list li::before{content:"✓";position:absolute;left:0;top:0;color:#7ee0b4;font-weight:1000}
+.guarantee-card{max-width:920px;margin:0 auto;text-align:center;background:linear-gradient(135deg,#fff,#fff5e8);border:1px solid rgba(244,111,44,.2);border-radius:var(--radius2);padding:48px;box-shadow:var(--shadow)}
+.guarantee-card .shield{font-size:46px;line-height:1;margin-bottom:6px}
+.guarantee-card .eyebrow{margin-bottom:12px}
+.guarantee-card .g-sub{font-size:20px;font-weight:750;color:var(--ink);max-width:720px;margin:0 auto 18px}
+.guarantee-card .g-text{font-size:17px;color:#475467;max-width:740px;margin:0 auto;line-height:1.6}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+.review-video{position:relative;padding-top:56.25%;border-radius:20px;overflow:hidden;box-shadow:0 16px 44px rgba(16,23,34,.14);background:#000}
+.review-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.review-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;max-width:760px;margin-left:auto;margin-right:auto}
+.review-shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 40px rgba(16,23,34,.1);background:#fff}
+.review-shot img{width:100%;height:auto;display:block}
 .proof-grid{display:grid;grid-template-columns:1fr .9fr .9fr;gap:18px;margin-top:34px}
 .proof{background:#fff;border:1px solid var(--line);border-radius:34px;padding:18px;box-shadow:0 16px 52px rgba(16,23,34,.09)}
 .proof img{height:280px;width:100%;object-fit:cover;border-radius:24px;background:#f7f3eb}
@@ -148,9 +162,10 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
 .footer{background:var(--navy);color:#9fb2bd;border-top:1px solid rgba(255,255,255,.08);padding:28px 0;font-size:13px}
 .footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:1040px){
- .menu{display:none}.hero-grid,.split,.founder-grid,.partner-grid,.cta-grid,.offer-grid{grid-template-columns:1fr}.hero-art{min-height:640px}.steps{grid-template-columns:repeat(3,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.bento,.photo-band,.proof-grid{grid-template-columns:1fr 1fr}.photo-tile.tall{min-height:360px}.card.big{grid-row:auto}.trust-row{grid-template-columns:1fr 1fr 1fr}
+ .menu{display:none}.hero-grid,.split,.founder-grid,.partner-grid,.cta-grid,.offer-grid{grid-template-columns:1fr}.hero-art{min-height:640px}.steps{grid-template-columns:repeat(3,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.bento,.photo-band,.proof-grid{grid-template-columns:1fr 1fr}.photo-tile.tall{min-height:360px}.card.big{grid-row:auto}.trust-row{grid-template-columns:1fr 1fr 1fr}.reviews-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:680px){
+ .reviews-grid{grid-template-columns:1fr}.review-shots{grid-template-columns:1fr}.guarantee-card{padding:28px;border-radius:28px}.guarantee-card .g-sub{font-size:18px}
  .container{width:min(100% - 24px,1180px)}.nav{height:66px}.nav-cta .btn-ghost{display:none}.btn{padding:13px 16px;font-size:14px}.brand span{font-size:15px}.brand span small{font-size:9px}.mark{width:38px;height:38px;border-radius:14px}
  .hero-grid{padding:42px 0 44px;gap:22px}h1{font-size:40px;letter-spacing:-.04em}.lead{font-size:17px}.hero-actions{margin:24px 0}.hero-actions .btn{width:100%}.trust-row{grid-template-columns:1fr;gap:10px}.trust{min-height:auto;padding:14px 16px}.trust b{font-size:21px}
  .hero-art{min-height:560px}.portrait-card{right:0;top:10px;width:80%;border-radius:34px}.portrait-card img{height:450px}.photo-stack{width:66%;bottom:12px}.mini-photo img{height:132px}.float-card{right:6px;bottom:50px;width:210px;padding:18px;border-radius:24px}.float-card strong{font-size:25px}
@@ -170,6 +185,7 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
       <a href="#work">Как работаем</a>
       <a href="#formats">Форматы</a>
       <a href="#audit">Аудит продаж</a>
+      <a href="#reviews">Отзывы</a>
       <a href="#founders">Основатели</a>
       <a href="#partner">Партнёрам</a>
     </nav>
@@ -197,11 +213,11 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
         <div class="trust"><b>онлайн / офлайн</b><span>команды и личные продажи</span></div>
       </div>
     </div>
-    <div class="hero-art" aria-label="Фото центра ПРОпродажи">
-      <div class="portrait-card"><img src="images/lidiya-stage.jpg" alt="Лидия Попова ведёт обучение по продажам"></div>
+    <div class="hero-art" aria-label="Фото основателей центра ПРОпродажи">
+      <div class="portrait-card"><img src="images/founders-pro-standing.jpg" alt="Иван и Лидия Поповы — основатели центра ПРОпродажи"></div>
       <div class="photo-stack">
-        <div class="mini-photo"><img src="images/lidiya-writing-flipchart.jpg" alt="Разбор у флипчарта"></div>
-        <div class="mini-photo"><img src="images/lidiya-flipchart-1on1.jpg" alt="Индивидуальная тренировка"></div>
+        <div class="mini-photo"><img src="images/founders-ivan-lidiya.jpg" alt="Иван и Лидия Поповы"></div>
+        <div class="mini-photo"><img src="images/lidiya-stage.jpg" alt="Лидия Попова ведёт обучение"></div>
       </div>
       <div class="float-card"><strong>не курс</strong><span>а практика, разборы и сопровождение до результата</span></div>
     </div>
@@ -264,19 +280,21 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
       <div class="compare-box">
         <h3>До</h3>
         <ul>
-          <li>нет единой логики общения</li>
+          <li>нет единой логики продажи</li>
           <li>возражения тушатся скидкой</li>
-          <li>звонки не разбираются</li>
-          <li>собственник сам продаёт лучше всех</li>
+          <li>звонки и встречи не разбираются</li>
+          <li>клиенты обещают и пропадают</li>
+          <li>время уходит, а продажи не растут</li>
         </ul>
       </div>
       <div class="compare-box good">
         <h3>После</h3>
         <ul>
-          <li>есть понятная структура диалога</li>
-          <li>менеджеры задают правильные вопросы</li>
+          <li>есть понятная структура продажи</li>
+          <li>задаёте правильные вопросы</li>
           <li>ошибки разбираются регулярно</li>
-          <li>команда продаёт увереннее и системно</li>
+          <li>клиенты покупают и рекомендуют</li>
+          <li>вы продаёте уверенно и системно</li>
         </ul>
       </div>
     </div>
@@ -349,11 +367,11 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
     <h2 class="section-title">Не пересказывают продажи из книжек. Сами прошли путь продаж, управления и бизнеса.</h2>
     <p class="section-lead">В основе центра — опыт менеджеров, руководителей, предпринимателей и тренеров, которые работают с продажами с 2005 года.</p>
     <div class="founder-grid">
-      <div class="founder-photo"><img src="images/founders-ivan-lidiya.jpg" alt="Иван и Лидия Поповы — основатели центра ПРОпродажи"></div>
+      <div class="founder-photo"><img src="images/founders-pro-seated.jpg" alt="Иван и Лидия Поповы — основатели центра ПРОпродажи"></div>
       <div class="bio-cards">
         <div class="bio"><h3>Лидия Попова</h3><p>Эксперт по продажам через коммуникацию, сооснователь центра «ПРОпродажи». Член Правления и официальный представитель Ассоциации бизнес-тренеров России по Оренбургу и области, лектор Всероссийского общества «Знание», наставник в клубе предпринимателей «Терра».</p><div class="badges"><span>продажи через коммуникацию</span><span>бизнес-тренинг</span><span>практика</span><span>мероприятия</span></div></div>
-        <div class="bio"><h3>Иван Попов</h3><p>Сооснователь центра, практик продаж и предпринимательства. Опыт включает личные продажи, управление командами, собственные бизнесы и переговоры.</p><div class="badges"><span>управление</span><span>бизнес</span><span>переговоры</span><span>команды</span></div></div>
-        <div class="bio"><h3>Что для нас важно</h3><p>Мы делаем упор не на мотивацию «на эмоциях», а на регулярные тренировки, разборы и внедрение навыка в реальные продажи. Результат — система, которая работает без вас.</p></div>
+        <div class="bio"><h3>Иван Попов</h3><p>Сооснователь центра, практик продаж и предпринимательства.</p><ul class="bio-list"><li>В продажах с 2005 года</li><li>Руководитель отдела продаж в федеральной компании — 1,5 года</li><li>В предпринимательстве с 2010 года</li><li>Запустил с нуля и развил 2 собственных бизнеса (2015–2021)</li><li>Сооснователь центра продаж с 2022 года</li></ul><div class="badges"><span>управление</span><span>бизнес</span><span>переговоры</span><span>команды</span></div></div>
+        <div class="bio"><h3>Что для нас важно</h3><p>Мы делаем упор не на мотивацию «на эмоциях», а на регулярные тренировки, разборы и внедрение навыка в реальные продажи. Результат — система, которая работает на вас.</p></div>
       </div>
     </div>
   </div>
@@ -362,7 +380,7 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
 <section class="section">
   <div class="container">
     <div class="eyebrow">Доверие</div>
-    <h2 class="section-title">Признание в профессии — рядом, а не вместо смысла.</h2>
+    <h2 class="section-title">Почему нам можно доверять.</h2>
     <p class="section-lead">Регалии и документы подтверждают экспертность. Но главный аргумент — реальная практика и понятная работа с продажами.</p>
     <div class="proof-grid">
       <div class="proof main"><img src="images/lidiya-stage.jpg" alt="Лидия Попова выступает как эксперт"><h3>Выступления и лекции</h3><p>Лектор общества «Знание», представитель Ассоциации бизнес-тренеров России.</p></div>
@@ -372,19 +390,50 @@ h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;margin:28px 0 26px;letter-sp
   </div>
 </section>
 
+<section class="section compact" id="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="shield">🛡️</div>
+      <div class="eyebrow">Наши гарантии</div>
+      <h2 class="section-title" style="margin:0 auto 14px;max-width:720px">Ваш доступ и поддержка не сгорают.</h2>
+      <p class="g-sub">Вы можете поставить обучение на паузу в любой момент жизни.</p>
+      <p class="g-text">Ваше внутреннее спокойствие — наш главный ориентир. Мы идём с вами до результата, чтобы каждый вложенный ресурс принёс именно те плоды, которых вы ждёте. Мы берём на себя всю ответственность за ваше сопровождение, чтобы вы могли полностью сосредоточиться на своём пути, не отвлекаясь на лишние тревоги. В нашей работе нет строгих временных рамок — бывают разные жизненные ситуации, и мы это учитываем. Вы можете идти в своём ритме, делать паузы и возвращаться тогда, когда у вас будет ресурс. Мы будем рядом до тех пор, пока вы не скажете: «У меня получилось».</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">Отзывы</div>
+    <h2 class="section-title" style="text-align:center;max-width:760px;margin:0 auto 12px">Результаты наших участников.</h2>
+    <p class="section-lead" style="text-align:center;max-width:700px;margin:0 auto 30px">Живые видео и реальные истории тех, кто применил наш подход в своих продажах.</p>
+    <div class="reviews-grid">
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240571&hash=3ff2dc63c8376655" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240573&hash=455dd7261dc8a3e6" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240572&hash=003dc4307fadf48d" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240577&hash=df7bdf922ceabb8f" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240574&hash=63e11976a9f571e1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240575&hash=b53e46add2ec94cb" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="review-video"><iframe src="https://vk.ru/video_ext.php?oid=357481781&id=456240576&hash=772ba8460705dae3" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+    <div class="review-shots">
+      <div class="review-shot"><img src="images/review-student.jpg" alt="Отзыв участницы: сразу применила подход на практике" loading="lazy"></div>
+      <div class="review-shot"><img src="images/review-income.jpg" alt="Отзыв: реальные результаты участников" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <section id="partner" class="section compact">
   <div class="container partner">
     <div class="partner-grid">
       <div>
         <div class="eyebrow">Партнёрская программа</div>
-        <h2 class="section-title">Рекомендуйте центр и получайте вознаграждение.</h2>
-        <p class="section-lead">Партнёры знакомят предпринимателей, менеджеров и экспертов с программами «ПРОпродажи». Если клиент оплачивает продукт центра, партнёр получает выплату.</p>
-        <a class="btn btn-primary" href="#contacts">Узнать условия</a>
+        <h2 class="section-title">Привилегии для партнёров тренингового центра.</h2>
+        <p class="section-lead">Партнёры знакомят предпринимателей, менеджеров и экспертов с программами «ПРОпродажи». Когда клиент оплачивает продукт центра, партнёр получает вознаграждение.</p>
+        <a class="btn btn-primary" href="#contacts">Узнать подробнее</a>
       </div>
-      <div class="percent">
-        <div><b>30%</b><span>с личной продажи</span></div>
-        <div><b>10%</b><span>с продажи в первой линии</span></div>
-        <div><b>5%</b><span>с продажи во второй линии</span></div>
+      <div class="percent" style="grid-template-columns:1fr">
+        <div><b>30–45%</b><span>вознаграждение с каждой рекомендации</span></div>
       </div>
     </div>
   </div>
